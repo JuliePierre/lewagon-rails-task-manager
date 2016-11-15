@@ -1,0 +1,13 @@
+<p>Index</p>
+
+<% @tasks.each do |task| %>
+  <h3><%= task.title %></h3>
+  <p><%= task.description %></p>
+  <%= link_to "Voir détails", task_path(task) %>
+  <br>
+  <%= link_to "Modifier tache", edit_task_path(task) %>
+  <br>
+  <%= link_to "Supprimer tache", task_path(task), method: :delete %>
+<% end %>
+<br>
+<%= link_to "Ajouter tache", new_task_path %>
